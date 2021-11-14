@@ -3,16 +3,22 @@
 
 ```javascript
 // Start client
-const client = new Kala('http://kalaUrl:kalaPort/api/v1')
+const client = new Kala('[http|https]://kalaUrl:kalaPort/api/v1')
+
+or 
+
+const client = new Kala() // -> for http://localhost:8000/api/v1
 
 // Delete all jobs
 await client.deleteAllJobs()
 
 // Create job
+const startDate = new Date()
+startDate.setTime(startDate.getTime() + 1000 * 60)
 await client.createJob({
     name: 'test',
-    times: 10,
-    start: new Date(),
+    times: 10, // -> 0 to repeat forever
+    start: startDate.toISOString(), // ej. 2021-11-14T19:52:00+01:00
     interval: 'PT1M',
     command: 'echo hi'
 })

@@ -2,17 +2,20 @@ const Kala = require('../lib/client')
 
 async function main() {
     // Start client
-    // const client = new Kala(yourKalaServerIpAndPort)
+    // const client = new Kala('[http|https]://kalaUrl:kalaPort/api/v1')
+    // const client = new Kala() // -> for http://localhost:8000/api/v1
 
     // Delete all jobs
     // await client.deleteAllJobs()
 
     // Create job
+    // const startDate = new Date()
+    // startDate.setTime(startDate.getTime() + 1000 * 60) // -> add at least a little time for first run
     // await client.createJob({
     //     name: 'test',
-    //     times: 10,
-    //     start: new Date(),
-    //     interval: 'PT1M',
+    //     times: 5,
+    //     start: startDate.toISOString(),
+    //     interval: 'PT10S',
     //     command: 'echo hi'
     // })
 
