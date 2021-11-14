@@ -3,7 +3,7 @@
 
 ```javascript
 // Start client
-const client = new Kala(yourKalaServerIpAndPort)
+const client = new Kala('http://kalaUrl:kalaPort/api/v1')
 
 // Delete all jobs
 await client.deleteAllJobs()
